@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lahiru Supun — Full Stack Engineer</title>
+  <meta name="description" content="Lahiru Supun — Full Stack Engineer. Personal site." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lahiru Supun — Full Stack Engineer" />
+  <meta property="og:description" content="Personal site of Lahiru Supun, full stack engineer." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (mono pairing options) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Geist+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Background effect layer (pure CSS, driven by JS mouse-tracked vars) -->
+  <div class="fx" aria-hidden="true">
+    <div class="fx__grid"></div>
+    <div class="fx__spot"></div>
+    <div class="fx__scan"></div>
+  </div>
+
+  <!-- Top terminal-style chrome -->
+  <header class="topbar" aria-label="Site header">
+    <div class="container topbar__inner">
+      <div class="brand" aria-label="Brand">
+        <span class="brand__prompt" aria-hidden="true">$</span>
+        <span class="brand__path">~/lahiru-supun</span>
+        <span class="brand__blink" aria-hidden="true">_</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="container hero__inner">
+        <div class="hero__meta">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="hero__status">available for work</span>
+          <span class="hero__sep" aria-hidden="true">//</span>
+          <span class="hero__locale">remote · GMT+5:30</span>
+        </div>
+
+        <h1 id="hero-name" class="hero__name">
+          Lahiru<br />Supun<span class="hero__caret" aria-hidden="true">.</span>
+        </h1>
+
+        <p class="hero__role">
+          <span class="kbd">role</span>
+          <span>Full Stack Engineer</span>
+        </p>
+
+        <p class="hero__intro">
+          I design and build software end-to-end &mdash; from typed backends and
+          relational schemas to fast, accessible interfaces. I like systems that
+          are <em>small enough to hold in your head</em> and code you can read on
+          a Friday afternoon.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">
+            <span>get in touch</span>
+            <span aria-hidden="true">↘</span>
+          </a>
+          <a class="btn btn--ghost" href="#about">
+            <span>more about me</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section--about" aria-labelledby="about-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">01</span>
+          <h2 id="about-title" class="section__title">about</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__body">
+            <p>
+              I&rsquo;m a full stack engineer who enjoys the whole stack &mdash;
+              from query planners and queue back-pressure to layout grids and
+              empty states. Most of my work lives somewhere between
+              <strong>TypeScript</strong>, <strong>Python</strong> and
+              <strong>Postgres</strong>.
+            </p>
+            <p>
+              I care a lot about <em>maintainability</em>: clear modules, honest
+              types, and tests that fail for the right reasons. I think good
+              software is mostly good taste applied consistently over time.
+            </p>
+            <p>
+              Off the keyboard, I read a lot, drink too much tea, and tinker with
+              small side projects that almost ship.
+            </p>
+          </div>
+
+          <aside class="about__side" aria-label="Quick facts">
+            <dl class="facts">
+              <div class="fact">
+                <dt>focus</dt>
+                <dd>web, APIs, data</dd>
+              </div>
+              <div class="fact">
+                <dt>stack</dt>
+                <dd>TS · Node · Python · Postgres · React</dd>
+              </div>
+              <div class="fact">
+                <dt>tools</dt>
+                <dd>Neovim · tmux · Linux</dd>
+              </div>
+              <div class="fact">
+                <dt>open to</dt>
+                <dd>contract · full-time · advisory</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section--contact" aria-labelledby="contact-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">02</span>
+          <h2 id="contact-title" class="section__title">contact</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="contact">
+          <p class="contact__lede">
+            The fastest way to reach me is email. I usually reply within a day.
+          </p>
+
+          <a class="contact__email" href="mailto:hello@example.com">
+            <span class="contact__email-label">email</span>
+            <span class="contact__email-value">hello@example.com</span>
+            <span class="contact__email-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <ul class="links" aria-label="Other links">
+            <li>
+              <a href="https://github.com/" target="_blank" rel="noopener">
+                <span class="links__key">github</span>
+                <span class="links__val">@lahirusupun</span>
+                <span class="links__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                <span class="links__key">linkedin</span>
+                <span class="links__val">in/lahirusupun</span>
+                <span class="links__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/" target="_blank" rel="noopener">
+                <span class="links__key">twitter</span>
+                <span class="links__val">@lahirusupun</span>
+                <span class="links__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="/resume.pdf">
+                <span class="links__key">resume</span>
+                <span class="links__val">resume.pdf</span>
+                <span class="links__arrow" aria-hidden="true">↓</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="container footer__inner">
+      <span class="footer__left">&copy; <span id="year">2026</span> Lahiru Supun</span>
+      <span class="footer__center" aria-hidden="true">·</span>
+      <span class="footer__right">built with html, css &amp; a little js</span>
+    </div>
+  </footer>
+
+  <!-- Tweaks panel (vanilla JS, hidden until toggled by host) -->
+  <div id="tweaks-panel" class="tweaks" hidden aria-label="Tweaks">
+    <div class="tweaks__head">
+      <span class="tweaks__title">Tweaks</span>
+      <button id="tweaks-close" class="tweaks__close" aria-label="Close tweaks">×</button>
+    </div>
+
+    <div class="tweaks__section">
+      <div class="tweaks__label">theme</div>
+      <div class="tweaks__row" role="radiogroup" aria-label="theme">
+        <button class="seg" data-tweak="theme" data-value="dark">dark</button>
+        <button class="seg" data-tweak="theme" data-value="light">light</button>
+      </div>
+    </div>
+
+    <div class="tweaks__section">
+      <div class="tweaks__label">accent</div>
+      <div class="tweaks__row tweaks__row--swatches" role="radiogroup" aria-label="accent">
+        <button class="swatch" data-tweak="accent" data-value="lime"    style="--sw:#c6ff3d" aria-label="lime"></button>
+        <button class="swatch" data-tweak="accent" data-value="cyan"    style="--sw:#5ee3ff" aria-label="cyan"></button>
+        <button class="swatch" data-tweak="accent" data-value="amber"   style="--sw:#ffb454" aria-label="amber"></button>
+        <button class="swatch" data-tweak="accent" data-value="magenta" style="--sw:#ff5eaa" aria-label="magenta"></button>
+        <button class="swatch" data-tweak="accent" data-value="violet"  style="--sw:#a78bff" aria-label="violet"></button>
+      </div>
+    </div>
+
+    <div class="tweaks__section">
+      <div class="tweaks__label">background</div>
+      <div class="tweaks__row" role="radiogroup" aria-label="background">
+        <button class="seg" data-tweak="bg" data-value="spotlight">spotlight</button>
+        <button class="seg" data-tweak="bg" data-value="scan">scan</button>
+        <button class="seg" data-tweak="bg" data-value="grid">grid</button>
+        <button class="seg" data-tweak="bg" data-value="off">off</button>
+      </div>
+    </div>
+
+    <div class="tweaks__section">
+      <div class="tweaks__label">font</div>
+      <div class="tweaks__row tweaks__row--col" role="radiogroup" aria-label="font">
+        <button class="seg seg--wide" data-tweak="font" data-value="jetbrains" style="font-family:'JetBrains Mono',monospace">JetBrains Mono</button>
+        <button class="seg seg--wide" data-tweak="font" data-value="ibm"       style="font-family:'IBM Plex Mono',monospace">IBM Plex Mono</button>
+        <button class="seg seg--wide" data-tweak="font" data-value="geist"     style="font-family:'Geist Mono',monospace">Geist Mono</button>
+        <button class="seg seg--wide" data-tweak="font" data-value="space"     style="font-family:'Space Mono',monospace">Space Mono</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
