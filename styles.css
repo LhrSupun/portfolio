@@ -512,6 +512,49 @@ a {
   border-radius: var(--r-sm);
 }
 
+/* ---------- Tweaks toggle button ---------- */
+.tweaks-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 49;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform .15s ease, border-color .15s ease, color .15s ease;
+}
+.tweaks-toggle:hover { border-color: var(--accent); color: var(--fg-strong); }
+.tweaks-toggle:active { transform: translateY(1px); }
+.tweaks-toggle__icon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.tweaks-toggle__icon span {
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.tweaks-toggle__icon span:nth-child(2) { width: 10px; }
+.tweaks-toggle__icon span:nth-child(3) { width: 6px; }
+.tweaks-toggle[aria-expanded="true"] { display: none; }
+
+@media (max-width: 720px) {
+  .tweaks-toggle { right: 12px; bottom: 12px; }
+}
+
 /* ---------- Tweaks panel ---------- */
 .tweaks {
   position: fixed;

@@ -76,21 +76,29 @@
     });
   });
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      panel.hidden = true;
-      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (_) {}
-    });
-  }
+  const toggleBtn = document.getElementById('tweaks-toggle');
+
+  const openPanel = () => {
+    panel.hidden = false;
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+  };
+  const closePanel = () => {
+    panel.hidden = true;
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (_) {}
+  };
+
+  if (toggleBtn) toggleBtn.addEventListener('click', openPanel);
+  if (closeBtn) closeBtn.addEventListener('click', closePanel);
 
   // ---- host edit-mode protocol (Tweaks toolbar toggle) ----
   // Register listener BEFORE announcing availability.
   window.addEventListener('message', (event) => {
     const t = event && event.data && event.data.type;
     if (t === '__activate_edit_mode') {
-      panel.hidden = false;
+      openPanel();
     } else if (t === '__deactivate_edit_mode') {
-      panel.hidden = true;
+      closePanel();
     }
   });
 
