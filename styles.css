@@ -613,6 +613,12 @@ a {
 }
 .tweaks__row--col { flex-direction: column; }
 .tweaks__row--swatches { flex-wrap: wrap; }
+.tweaks__row--grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.tweaks__row--grid2 .seg { text-align: center; }
 
 .seg {
   appearance: none;
