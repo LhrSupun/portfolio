@@ -4,12 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lahiru Supun — Full Stack Engineer</title>
-  <meta name="description" content="Lahiru Supun — Full Stack Engineer. Personal site." />
+  <meta name="description" content="Lahiru Supun — full stack engineer building software end-to-end across web, cloud, and robotics: TypeScript/React, Node, Postgres, Azure/Kubernetes, ROS2, and embedded systems." />
+  <link rel="canonical" href="https://portfolio.lhrsupun.work/" />
+  <meta name="theme-color" content="#0b0b0d" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lahiru Supun — Full Stack Engineer" />
-  <meta property="og:description" content="Personal site of Lahiru Supun, full stack engineer." />
+  <meta property="og:description" content="Engineer building software end-to-end — web, cloud, and robotics. TypeScript/React, Node, Postgres, Azure/Kubernetes, ROS2, embedded." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio.lhrsupun.work/" />
+  <meta property="og:site_name" content="Lahiru Supun" />
+  <!-- Add a 1200×630 image at /og.png for rich link previews -->
+  <meta property="og:image" content="https://portfolio.lhrsupun.work/og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lahiru Supun — Full Stack Engineer" />
+  <meta name="twitter:description" content="Engineer building software end-to-end — web, cloud, and robotics." />
+  <meta name="twitter:image" content="https://portfolio.lhrsupun.work/og.png" />
+  <meta name="twitter:site" content="@Lhr_Supun" />
 
   <!-- Fonts (mono pairing options) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +32,28 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lahiru Supun",
+    "url": "https://portfolio.lhrsupun.work/",
+    "jobTitle": "Full Stack Engineer",
+    "sameAs": [
+      "https://github.com/LhrSupun",
+      "https://www.linkedin.com/in/lhrsupun/",
+      "https://x.com/Lhr_Supun"
+    ],
+    "knowsAbout": [
+      "Web Development", "TypeScript", "React", "Node.js", "Postgres",
+      "Cloud / DevOps", "Azure", "Kubernetes", "CI/CD",
+      "Robotics", "ROS2", "ArduPilot", "Embedded Systems", "ESP32"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +75,8 @@
       </div>
       <nav class="nav" aria-label="Primary">
         <a href="#about">about</a>
+        <a href="#stack">stack</a>
+        <a href="#work">work</a>
         <a href="#contact">contact</a>
       </nav>
     </div>
@@ -68,9 +104,10 @@
         </p>
 
         <p class="hero__intro">
-          I design and build software end-to-end &mdash; from typed backends and
-          relational schemas to fast, accessible interfaces. I like systems that
-          are <em>small enough to hold in your head</em> and code you can read on
+          I design and build software end-to-end &mdash; from drone flight stacks
+          and embedded firmware to typed backends, cloud infrastructure, and
+          fast, accessible interfaces. I like systems that are
+          <em>small enough to hold in your head</em> and code you can read on
           a Friday afternoon.
         </p>
 
@@ -79,8 +116,8 @@
             <span>get in touch</span>
             <span aria-hidden="true">↘</span>
           </a>
-          <a class="btn btn--ghost" href="#about">
-            <span>more about me</span>
+          <a class="btn btn--ghost" href="#work">
+            <span>see selected work</span>
           </a>
         </div>
       </div>
@@ -98,11 +135,13 @@
         <div class="about__grid">
           <div class="about__body">
             <p>
-              I&rsquo;m a full stack engineer who enjoys the whole stack &mdash;
-              from query planners and queue back-pressure to layout grids and
-              empty states. Most of my work lives somewhere between
-              <strong>TypeScript</strong>, <strong>Python</strong> and
-              <strong>Postgres</strong>.
+              I&rsquo;m an engineer who enjoys the whole stack &mdash; from query
+              planners and queue back-pressure to ROS2 nodes, flight controllers,
+              and the layout grids and empty states on top. My day-to-day lives
+              mostly between <strong>TypeScript</strong>, <strong>Python</strong>
+              and <strong>Postgres</strong>, with cloud
+              (<strong>Azure</strong>, <strong>Kubernetes</strong>) and robotics
+              (<strong>ROS2</strong>, <strong>ArduPilot</strong>) close behind.
             </p>
             <p>
               I care a lot about <em>maintainability</em>: clear modules, honest
@@ -111,7 +150,7 @@
             </p>
             <p>
               Off the keyboard, I read a lot, drink too much tea, and tinker with
-              small side projects that almost ship.
+              small side projects &mdash; some of which even ship.
             </p>
           </div>
 
@@ -119,11 +158,11 @@
             <dl class="facts">
               <div class="fact">
                 <dt>focus</dt>
-                <dd>web, APIs, data</dd>
+                <dd>full-stack systems</dd>
               </div>
               <div class="fact">
-                <dt>stack</dt>
-                <dd>TS · Node · Python · Postgres · React</dd>
+                <dt>domains</dt>
+                <dd>web · cloud · robotics</dd>
               </div>
               <div class="fact">
                 <dt>tools</dt>
@@ -139,11 +178,126 @@
       </div>
     </section>
 
+    <!-- STACK -->
+    <section id="stack" class="section section--stack" aria-labelledby="stack-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">02</span>
+          <h2 id="stack-title" class="section__title">stack</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </header>
+
+        <ul class="stack" aria-label="Technical stack by domain">
+          <li class="stack__row">
+            <span class="stack__key">web</span>
+            <span class="stack__val">TypeScript · React · Node · Postgres · Tailwind</span>
+          </li>
+          <li class="stack__row">
+            <span class="stack__key">cloud / devops</span>
+            <span class="stack__val">Azure (AKS · SQL · App Insights) · AWS · Docker · Kubernetes · GitHub Actions</span>
+          </li>
+          <li class="stack__row">
+            <span class="stack__key">robotics / uav</span>
+            <span class="stack__val">ROS2 · ArduPilot · MAVLink · MAVROS2 · Gazebo</span>
+          </li>
+          <li class="stack__row">
+            <span class="stack__key">embedded</span>
+            <span class="stack__val">ESP32 · Arduino · sensor integration · PCB-level debugging</span>
+          </li>
+          <li class="stack__row">
+            <span class="stack__key">also</span>
+            <span class="stack__val">C# / .NET · Python · PHP · ETL &amp; REST/SOAP integration</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <!--
+      Replace each placeholder below with a real project.
+      Formula that reads well: problem → what you built → stack → outcome/link.
+      Keep 3–5 items; ideally one per domain you claim above (web, cloud, robotics, embedded).
+      Update href="#" with real code/live URLs, or remove the link if none.
+    -->
+    <section id="work" class="section section--work" aria-labelledby="work-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">03</span>
+          <h2 id="work-title" class="section__title">selected work</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </header>
+
+        <ol class="work">
+          <li class="work__item">
+            <div class="work__head">
+              <h3 class="work__title">Autonomous UAV mission control</h3>
+              <span class="work__tags">ROS2 · ArduPilot · MAVLink · Gazebo</span>
+            </div>
+            <p class="work__desc">
+              [ Replace: the problem this solved, what you built (e.g. a ROS2
+              mission/telemetry pipeline simulated in Gazebo), and the outcome —
+              flight time, autonomy level, or what shipped. ]
+            </p>
+            <div class="work__links">
+              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+              <a href="#" target="_blank" rel="noopener">writeup <span aria-hidden="true">↗</span></a>
+            </div>
+          </li>
+
+          <li class="work__item">
+            <div class="work__head">
+              <h3 class="work__title">Containerized platform on Azure AKS</h3>
+              <span class="work__tags">Azure · Kubernetes · Docker · GitHub Actions</span>
+            </div>
+            <p class="work__desc">
+              [ Replace: a cloud/DevOps project — services you containerized and
+              deployed to AKS, the CI/CD pipeline, and the result (deploy time,
+              uptime, scale, cost). ]
+            </p>
+            <div class="work__links">
+              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+              <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
+            </div>
+          </li>
+
+          <li class="work__item">
+            <div class="work__head">
+              <h3 class="work__title">[ Web product — replace with a real one ]</h3>
+              <span class="work__tags">TypeScript · React · Node · Postgres</span>
+            </div>
+            <p class="work__desc">
+              [ Replace: a full-stack web app you shipped — the problem, the
+              architecture, and impact (users, performance, what it replaced). ]
+            </p>
+            <div class="work__links">
+              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+              <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
+            </div>
+          </li>
+
+          <li class="work__item">
+            <div class="work__head">
+              <h3 class="work__title">ESP32 sensor telemetry node</h3>
+              <span class="work__tags">ESP32 · Arduino · C++ · sensors</span>
+            </div>
+            <p class="work__desc">
+              [ Replace: an embedded build — the hardware, what it sensed/
+              controlled, how it talked to the rest of the system, and the
+              result. ]
+            </p>
+            <div class="work__links">
+              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section section--contact" aria-labelledby="contact-title">
       <div class="container section__inner">
         <header class="section__head">
-          <span class="section__index">02</span>
+          <span class="section__index">04</span>
           <h2 id="contact-title" class="section__title">contact</h2>
           <span class="section__rule" aria-hidden="true"></span>
         </header>
@@ -181,13 +335,15 @@
                 <span class="links__arrow" aria-hidden="true">↗</span>
               </a>
             </li>
-            <!-- <li>
-              <a href="/resume.pdf">
+            <!-- Add a resume: drop resume.pdf in the repo root and uncomment.
+            <li>
+              <a href="/resume.pdf" target="_blank" rel="noopener">
                 <span class="links__key">resume</span>
                 <span class="links__val">resume.pdf</span>
                 <span class="links__arrow" aria-hidden="true">↓</span>
               </a>
-            </li> -->
+            </li>
+            -->
           </ul>
         </div>
       </div>

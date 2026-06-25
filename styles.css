@@ -680,3 +680,92 @@ a {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
+/* ---------- Stack (domain-grouped) ---------- */
+.stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+.stack__row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 20px;
+  font-size: var(--fs-sm);
+}
+.stack__row + .stack__row { border-top: 1px solid var(--border-soft); }
+.stack__key {
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.stack__val { color: var(--fg); }
+
+/* ---------- Selected work ---------- */
+.work {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.work__item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  padding: 22px 24px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.work__item:hover {
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--surface) 92%, var(--accent));
+}
+.work__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+}
+.work__title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--fg-strong);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.work__tags {
+  font-size: var(--fs-xs);
+  color: var(--fg-muted);
+  letter-spacing: 0.02em;
+}
+.work__desc {
+  margin: 0 0 14px;
+  color: var(--fg);
+  max-width: 70ch;
+}
+.work__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: var(--fs-sm);
+}
+.work__links a {
+  color: var(--fg-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .15s ease;
+}
+.work__links a:hover { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .stack__row { grid-template-columns: 1fr; gap: 4px; }
+}
