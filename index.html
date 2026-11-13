@@ -1,38 +1,59 @@
 <!doctype html>
-<html lang="en">
+<!-- The data-* attributes are the first-paint defaults; script.js re-applies
+     them from TWEAK_DEFAULTS + whatever the visitor saved in the tweaks panel. -->
+<html lang="en" data-theme="dark" data-accent="lime" data-font="geist" data-bg="spotlight">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lahiru Supun — Full Stack Engineer</title>
-  <meta name="description" content="Lahiru Supun — full stack engineer building software end-to-end across web, cloud, and robotics: TypeScript/React, Node, Postgres, Azure/Kubernetes, ROS2, and embedded systems." />
+  <title>Lahiru Supun — Full-stack Developer · MERN · Robotics</title>
+  <meta name="description" content="Lahiru Supun — full-stack developer and Senior Robotics System Integration Engineer at Xavier AI, building software end-to-end across web, cloud and robotics." />
   <link rel="canonical" href="https://portfolio.lhrsupun.work/" />
-  <meta name="theme-color" content="#0b0b0d" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#09090b" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lahiru Supun — Full Stack Engineer" />
-  <meta property="og:description" content="Engineer building software end-to-end — web, cloud, and robotics. TypeScript/React, Node, Postgres, Azure/Kubernetes, ROS2, embedded." />
+  <meta property="og:title" content="Lahiru Supun — Full-stack Developer · MERN · Robotics" />
+  <meta property="og:description" content="Full-stack developer and Senior Robotics System Integration Engineer at Xavier AI — building across web, cloud and robotics." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://portfolio.lhrsupun.work/" />
   <meta property="og:site_name" content="Lahiru Supun" />
-  <!-- Add a 1200×630 image at /og.png for rich link previews -->
   <meta property="og:image" content="https://portfolio.lhrsupun.work/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lahiru Supun — Full Stack Engineer" />
-  <meta name="twitter:description" content="Engineer building software end-to-end — web, cloud, and robotics." />
+  <meta name="twitter:title" content="Lahiru Supun — Full-stack Developer · MERN · Robotics" />
+  <meta name="twitter:description" content="Full-stack developer and Senior Robotics System Integration Engineer at Xavier AI — web, cloud and robotics." />
   <meta name="twitter:image" content="https://portfolio.lhrsupun.work/og.png" />
   <meta name="twitter:site" content="@Lhr_Supun" />
 
-  <!-- Fonts (mono pairing options) -->
+  <!-- Apply saved tweaks before first paint (no theme flash) -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var saved = JSON.parse(localStorage.getItem('lahiru.portfolio.tweaks.v2') || '{}');
+        ['theme', 'accent', 'font', 'bg'].forEach(function (key) {
+          if (typeof saved[key] === 'string' && /^[a-z]+$/.test(saved[key])) {
+            root.setAttribute('data-' + key, saved[key]);
+          }
+        });
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Geist is the default pairing; the other families only download once the tweaks panel is opened -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Geist+Mono:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -41,16 +62,33 @@
     "@type": "Person",
     "name": "Lahiru Supun",
     "url": "https://portfolio.lhrsupun.work/",
-    "jobTitle": "Full Stack Engineer",
+    "email": "mailto:lhrsupun@gmail.com",
+    "jobTitle": "Senior Robotics System Integration Engineer",
+    "description": "Full-stack developer · MERN · Robotics",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Xavier AI"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Colombo School of Computing (UCSC)"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bandaragama",
+      "addressCountry": "LK"
+    },
     "sameAs": [
       "https://github.com/LhrSupun",
       "https://www.linkedin.com/in/lhrsupun/",
       "https://x.com/Lhr_Supun"
     ],
     "knowsAbout": [
-      "Web Development", "TypeScript", "React", "Node.js", "Postgres",
-      "Cloud / DevOps", "Azure", "Kubernetes", "CI/CD",
-      "Robotics", "ROS2", "ArduPilot", "Embedded Systems", "ESP32"
+      "Web Development", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express",
+      "MongoDB", "SQL", "Postgres", "Python", "Linux",
+      "Cloud / DevOps", "Azure", "AWS", "Kubernetes", "CI/CD",
+      "Robotics", "ROS2", "ArduPilot", "Embedded Systems", "ESP32", "IoT",
+      "Unity", "Unreal Engine", "C++", ".NET"
     ]
   }
   </script>
@@ -58,116 +96,154 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Background effect layer (pure CSS, driven by JS mouse-tracked vars) -->
+  <!-- Icon sprite (Feather icons, MIT) -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></symbol>
+    <symbol id="i-arrow-down-right" viewBox="0 0 24 24"><line x1="7" y1="7" x2="17" y2="17" /><polyline points="17 7 17 17 7 17" /></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5" /><polyline points="5 12 12 5 19 12" /></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></symbol>
+  </svg>
+
+  <!-- Background effect layer (pure CSS; the spotlight is moved by script.js) -->
   <div class="fx" aria-hidden="true">
     <div class="fx__grid"></div>
     <div class="fx__spot"></div>
     <div class="fx__scan"></div>
   </div>
 
-  <!-- Top terminal-style chrome -->
+  <!-- Floating nav -->
   <header class="topbar" aria-label="Site header">
-    <div class="container topbar__inner">
-      <div class="brand" aria-label="Brand">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="Lahiru Supun — back to top">
         <span class="brand__prompt" aria-hidden="true">$</span>
-        <span class="brand__path">~/lahiru-supun</span>
+        <span class="brand__path">
+          <span class="brand__path-full">~/lahiru-supun</span>
+          <span class="brand__path-short">~/ls</span>
+        </span>
         <span class="brand__blink" aria-hidden="true">_</span>
-      </div>
+      </a>
+
       <nav class="nav" aria-label="Primary">
+        <span class="nav__pill" aria-hidden="true"></span>
         <a href="#about">about</a>
+        <a href="#experience">experience</a>
         <a href="#stack">stack</a>
+        <a href="#education" class="nav__optional">education</a>
         <a href="#contact">contact</a>
       </nav>
+
+      <div class="topbar__actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch theme">
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon" /></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-name">
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="hero__aurora" aria-hidden="true"></div>
+
       <div class="container hero__inner">
-        <div class="hero__meta">
-          <span class="dot" aria-hidden="true"></span>
-          <span class="hero__status">available for work</span>
+        <p class="hero__meta">
+          <span class="status">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="hero__status">available for work</span>
+          </span>
           <span class="hero__sep" aria-hidden="true">//</span>
           <span class="hero__locale">remote · GMT+5:30</span>
-        </div>
+        </p>
 
         <h1 id="hero-name" class="hero__name">
-          Lahiru<br />Supun<span class="hero__caret" aria-hidden="true">.</span>
+          <span class="sr-only">Lahiru Supun</span>
+          <span class="hero__name-visual" aria-hidden="true">
+            <span class="hero__word" style="--w:0">Lahiru</span>
+            <span class="hero__word" style="--w:1">Supun<span class="hero__caret">.</span></span>
+          </span>
         </h1>
 
-        <p class="hero__role">
-          <span class="kbd">role</span>
-          <span>Full Stack Engineer</span>
-        </p>
-
-        <p class="hero__intro">
-          I design and build software end-to-end &mdash; from drone flight stacks
-          and embedded firmware to typed backends, cloud infrastructure, and
-          fast, accessible interfaces. I like systems that are
-          <em>small enough to hold in your head</em> and code you can read on
-          a Friday afternoon.
-        </p>
-
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#contact">
-            <span>get in touch</span>
-            <span aria-hidden="true">↘</span>
-          </a>
-          <a class="btn btn--ghost" href="#about">
-            <span>more about me</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section section--about" aria-labelledby="about-title">
-      <div class="container section__inner">
-        <header class="section__head">
-          <span class="section__index">01</span>
-          <h2 id="about-title" class="section__title">about</h2>
-          <span class="section__rule" aria-hidden="true"></span>
-        </header>
-
-        <div class="about__grid">
-          <div class="about__body">
-            <p>
-              I&rsquo;m an engineer who enjoys the whole stack &mdash; from query
-              planners and queue back-pressure to ROS2 nodes, flight controllers,
-              and the layout grids and empty states on top. My day-to-day lives
-              mostly between <strong>TypeScript</strong>, <strong>Python</strong>
-              and <strong>Postgres</strong>, with cloud
-              (<strong>Azure</strong>, <strong>Kubernetes</strong>) and robotics
-              (<strong>ROS2</strong>, <strong>ArduPilot</strong>) close behind.
+        <div class="hero__grid" data-glow>
+          <div class="hero__copy">
+            <p class="hero__role">
+              <span>Full-stack developer</span>
+              <span>MERN</span>
+              <span>Robotics</span>
             </p>
-            <p>
-              I care a lot about <em>maintainability</em>: clear modules, honest
-              types, and tests that fail for the right reasons. I think good
-              software is mostly good taste applied consistently over time.
+
+            <p class="hero__intro">
+              I design and build software end-to-end &mdash; from drone flight stacks
+              and embedded firmware to typed backends, cloud infrastructure, and
+              fast, accessible interfaces. I like systems that are
+              <em>small enough to hold in your head</em> and code you can read on
+              a Friday afternoon.
             </p>
-            <p>
-              Off the keyboard, I read a lot, drink too much tea, and tinker with
-              small side projects &mdash; some of which even ship.
-            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#contact">
+                <span>get in touch</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-down-right" /></svg>
+              </a>
+              <a class="btn btn--ghost" href="#experience">
+                <span>view experience</span>
+              </a>
+
+              <ul class="socials" aria-label="Profiles">
+                <li>
+                  <a href="https://github.com/LhrSupun" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/lhrsupun/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/Lhr_Supun" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                    <svg class="icon" aria-hidden="true"><use href="#i-x" /></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <aside class="about__side" aria-label="Quick facts">
-            <dl class="facts">
-              <div class="fact">
-                <dt>focus</dt>
-                <dd>full-stack systems</dd>
+          <!-- At-a-glance panel -->
+          <aside class="panel card" aria-label="At a glance">
+            <div class="panel__head">
+              <span class="panel__title">~/now</span>
+              <span class="panel__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+            <dl class="panel__list">
+              <div>
+                <dt>role</dt>
+                <dd>Senior Robotics System Integration Engineer</dd>
               </div>
-              <div class="fact">
-                <dt>domains</dt>
-                <dd>web · cloud · robotics</dd>
+              <div>
+                <dt>at</dt>
+                <dd>Xavier AI <span class="muted">· since Jul 2025</span></dd>
               </div>
-              <div class="fact">
-                <dt>tools</dt>
-                <dd>Neovim · tmux · macOS · Linux</dd>
+              <div>
+                <dt>based in</dt>
+                <dd>Bandaragama, Sri Lanka</dd>
               </div>
-              <div class="fact">
+              <div>
+                <dt>local time</dt>
+                <dd><time data-clock hidden></time><span class="muted">GMT+5:30</span></dd>
+              </div>
+              <div>
+                <dt>experience</dt>
+                <dd><span data-years-since="2021-03">5+</span> years <span class="muted">· since 2021</span></dd>
+              </div>
+              <div>
                 <dt>open to</dt>
                 <dd>contract · full-time · advisory</dd>
               </div>
@@ -177,172 +253,504 @@
       </div>
     </section>
 
-    <!-- STACK -->
-    <section id="stack" class="section section--stack" aria-labelledby="stack-title">
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">01</span>
+          <h2 id="about-title" class="section__title">about</h2>
+        </header>
+
+        <div class="section__body">
+          <p class="lead" data-reveal>
+            I&rsquo;m an engineer who enjoys the whole stack &mdash; from query
+            planners and queue back-pressure to ROS2 nodes, flight controllers,
+            and the layout grids and empty states on top.
+          </p>
+
+          <div class="about__grid">
+            <div class="about__body" data-reveal>
+              <p>
+                Right now I&rsquo;m a <strong>Senior Robotics System Integration
+                Engineer</strong> at <strong>Xavier AI</strong> in Colombo, working
+                on robotics system integration and design. I got here through
+                full-stack work: a vehicle-routing module at EIS, game backends
+                and player subscription systems at NineHermits, and a
+                fire-safety inspection app prototype at Frontwalker.
+              </p>
+              <p>
+                My day-to-day lives mostly between <strong>TypeScript</strong>,
+                <strong>Python</strong> and <strong>Postgres</strong>. On the web
+                that usually means <strong>MERN</strong> (MongoDB, Express, React,
+                Node), with cloud (<strong>Azure</strong>,
+                <strong>Kubernetes</strong>) and robotics (<strong>ROS2</strong>,
+                <strong>ArduPilot</strong>) close behind.
+              </p>
+              <p>
+                I care a lot about <em>maintainability</em>: clear modules, honest
+                types, and tests that fail for the right reasons. I think good
+                software is mostly good taste applied consistently over time.
+              </p>
+              <p>
+                Off the keyboard, I read a lot, drink too much tea, and tinker with
+                small side projects &mdash; some of which even ship.
+              </p>
+            </div>
+
+            <aside class="about__side" aria-label="Quick facts" data-glow>
+              <dl class="facts card" data-reveal>
+                <div class="fact">
+                  <dt>focus</dt>
+                  <dd>full-stack systems</dd>
+                </div>
+                <div class="fact">
+                  <dt>domains</dt>
+                  <dd>web · cloud · robotics</dd>
+                </div>
+                <div class="fact">
+                  <dt>tools</dt>
+                  <dd>Neovim · tmux · macOS · Linux</dd>
+                </div>
+                <div class="fact">
+                  <dt>open to</dt>
+                  <dd>contract · full-time · advisory</dd>
+                </div>
+              </dl>
+
+              <div class="card interests" data-reveal>
+                <h3 class="card__label">interests</h3>
+                <ul class="chips">
+                  <li>open source</li>
+                  <li>web development</li>
+                  <li>DIY</li>
+                  <li>robotics</li>
+                  <li>IoT</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
       <div class="container section__inner">
         <header class="section__head">
           <span class="section__index">02</span>
-          <h2 id="stack-title" class="section__title">stack</h2>
-          <span class="section__rule" aria-hidden="true"></span>
+          <h2 id="experience-title" class="section__title">experience</h2>
         </header>
 
-        <ul class="stack" aria-label="Technical stack by domain">
-          <li class="stack__row">
-            <span class="stack__key">web</span>
-            <span class="stack__val">TypeScript · React · Node · Postgres · Tailwind</span>
-          </li>
-          <li class="stack__row">
-            <span class="stack__key">cloud / devops</span>
-            <span class="stack__val">Azure (AKS · SQL · App Insights) · AWS · Docker · Kubernetes · GitHub Actions</span>
-          </li>
-          <li class="stack__row">
-            <span class="stack__key">robotics / uav</span>
-            <span class="stack__val">ROS2 · ArduPilot · MAVLink · MAVROS2 · Gazebo</span>
-          </li>
-          <li class="stack__row">
-            <span class="stack__key">embedded</span>
-            <span class="stack__val">ESP32 · Arduino · sensor integration · PCB-level debugging</span>
-          </li>
-          <li class="stack__row">
-            <span class="stack__key">also</span>
-            <span class="stack__val">C# / .NET · Python · PHP · ETL &amp; REST/SOAP integration</span>
-          </li>
-        </ul>
+        <div class="section__body">
+          <ol class="timeline" role="list">
+            <li class="job" data-reveal>
+              <div class="job__when">
+                <span class="job__dates"><time datetime="2025-07">Jul 2025</time> &mdash; Present</span>
+                <span class="job__now"><span class="dot" aria-hidden="true"></span>current</span>
+              </div>
+              <div class="job__main">
+                <h3 class="job__role">Senior Robotics System Integration Engineer</h3>
+                <p class="job__org">
+                  <span class="job__company">Xavier AI</span>
+                  <span>Robotics engineering</span>
+                  <span>Colombo, Sri Lanka</span>
+                </p>
+                <ul class="job__points">
+                  <li>Robotics system integration and design.</li>
+                </ul>
+                <ul class="chips chips--sm" aria-label="Focus areas">
+                  <li>robotics</li>
+                  <li>system integration</li>
+                  <li>system design</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="job" data-reveal>
+              <div class="job__when">
+                <span class="job__dates"><time datetime="2025-04">Apr 2025</time> &mdash; <time datetime="2025-07">Jul 2025</time></span>
+              </div>
+              <div class="job__main">
+                <h3 class="job__role">Senior Software Engineer</h3>
+                <p class="job__org">
+                  <span class="job__company">Frontwalker</span>
+                  <span>Software development company</span>
+                </p>
+                <ul class="job__points">
+                  <li>
+                    Developed a prototype for a fire-safety inspection mobile app,
+                    including QR scanning, quotation management and inventory
+                    management.
+                  </li>
+                </ul>
+                <ul class="chips chips--sm" aria-label="Focus areas">
+                  <li>mobile app</li>
+                  <li>QR scanning</li>
+                  <li>quotation management</li>
+                  <li>inventory management</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="job" data-reveal>
+              <div class="job__when">
+                <span class="job__dates"><time datetime="2022-09">Sep 2022</time> &mdash; <time datetime="2025-04">Apr 2025</time></span>
+              </div>
+              <div class="job__main">
+                <h3 class="job__role">Full Stack Developer</h3>
+                <p class="job__org">
+                  <span class="job__company">NineHermits</span>
+                  <span>Gaming company</span>
+                </p>
+                <ul class="job__points">
+                  <li>Built REST, Socket.io and blockchain APIs for games and deployed them to AWS.</li>
+                  <li>Designed and maintained player subscription systems for games (Unreal / Unity).</li>
+                </ul>
+                <ul class="chips chips--sm" aria-label="Focus areas">
+                  <li>REST</li>
+                  <li>Socket.io</li>
+                  <li>blockchain APIs</li>
+                  <li>AWS</li>
+                  <li>Unreal</li>
+                  <li>Unity</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="job" data-reveal>
+              <div class="job__when">
+                <span class="job__dates"><time datetime="2021-03">Mar 2021</time> &mdash; <time datetime="2022-09">Sep 2022</time></span>
+              </div>
+              <div class="job__main">
+                <h3 class="job__role">Software Engineer <span class="job__role-note">React.js, Node.js</span></h3>
+                <p class="job__org">
+                  <span class="job__company">EIS</span>
+                  <span>Startup</span>
+                  <span>Remote</span>
+                </p>
+                <ul class="job__points">
+                  <li>Built a vehicle routing module using Google OR-Tools.</li>
+                </ul>
+                <ul class="chips chips--sm" aria-label="Focus areas">
+                  <li>React.js</li>
+                  <li>Node.js</li>
+                  <li>Google OR-Tools</li>
+                  <li>vehicle routing</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section" aria-labelledby="stack-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">03</span>
+          <h2 id="stack-title" class="section__title">stack</h2>
+        </header>
+
+        <div class="section__body">
+          <div class="bento" data-glow>
+            <article class="card bento__web" data-reveal>
+              <h3 class="card__label">web</h3>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>Socket.io</li>
+                <li>Tailwind</li>
+              </ul>
+            </article>
+
+            <article class="card bento__levels" data-reveal>
+              <h3 class="card__label">proficiency</h3>
+              <ul class="levels">
+                <li class="level" style="--r:0">
+                  <span>JavaScript</span>
+                  <span class="pips" role="img" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+                </li>
+                <li class="level" style="--r:1">
+                  <span>MongoDB</span>
+                  <span class="pips" role="img" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+                </li>
+                <li class="level" style="--r:2">
+                  <span>Shell scripting</span>
+                  <span class="pips" role="img" aria-label="4 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
+                </li>
+                <li class="level" style="--r:3">
+                  <span>Python</span>
+                  <span class="pips" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+                </li>
+                <li class="level" style="--r:4">
+                  <span>SQL</span>
+                  <span class="pips" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+                </li>
+                <li class="level" style="--r:5">
+                  <span>C#</span>
+                  <span class="pips" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+                </li>
+                <li class="level" style="--r:6">
+                  <span>TypeScript</span>
+                  <span class="pips" role="img" aria-label="3 out of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card bento__cloud" data-reveal>
+              <h3 class="card__label">cloud / devops</h3>
+              <ul class="chips">
+                <li>Azure (AKS · SQL · App Insights)</li>
+                <li>AWS</li>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>GitHub Actions</li>
+                <li>Linux</li>
+                <li>Shell</li>
+              </ul>
+            </article>
+
+            <article class="card bento__data" data-reveal>
+              <h3 class="card__label">data</h3>
+              <ul class="chips">
+                <li>MongoDB</li>
+                <li>Postgres</li>
+                <li>MS SQL</li>
+                <li>SQL</li>
+              </ul>
+            </article>
+
+            <article class="card bento__games" data-reveal>
+              <h3 class="card__label">game dev</h3>
+              <ul class="chips">
+                <li>Unity</li>
+                <li>Unreal Engine</li>
+                <li>C#</li>
+              </ul>
+            </article>
+
+            <article class="card bento__robo" data-reveal>
+              <h3 class="card__label">robotics / uav</h3>
+              <ul class="chips">
+                <li>ROS2</li>
+                <li>ArduPilot</li>
+                <li>MAVLink</li>
+                <li>MAVROS2</li>
+                <li>Gazebo</li>
+              </ul>
+            </article>
+
+            <article class="card bento__embedded" data-reveal>
+              <h3 class="card__label">embedded</h3>
+              <ul class="chips">
+                <li>ESP32</li>
+                <li>Arduino</li>
+                <li>C++</li>
+                <li>sensor integration</li>
+                <li>PCB-level debugging</li>
+              </ul>
+            </article>
+
+            <article class="card bento__also" data-reveal>
+              <h3 class="card__label">also</h3>
+              <ul class="chips">
+                <li>Python</li>
+                <li>C# / .NET</li>
+                <li>PHP</li>
+                <li>ETL &amp; REST/SOAP integration</li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- SELECTED WORK — hidden for now (placeholder cards). To show again:
-         uncomment the block below, restore the `work` nav link and the hero
-         "see selected work" CTA, and renumber contact from 03 back to 04.
+         uncomment the block below, add a `work` link to the nav, and renumber
+         the sections after it (education 05, contact 06).
          Fill each card (problem → what you built → stack → outcome/link) first. -->
     <!--
-    <section id="work" class="section section--work" aria-labelledby="work-title">
+    <section id="work" class="section" aria-labelledby="work-title">
       <div class="container section__inner">
         <header class="section__head">
-          <span class="section__index">03</span>
+          <span class="section__index">04</span>
           <h2 id="work-title" class="section__title">selected work</h2>
-          <span class="section__rule" aria-hidden="true"></span>
         </header>
 
-        <ol class="work">
-          <li class="work__item">
-            <div class="work__head">
-              <h3 class="work__title">Autonomous UAV mission control</h3>
-              <span class="work__tags">ROS2 · ArduPilot · MAVLink · Gazebo</span>
-            </div>
-            <p class="work__desc">
-              [ Replace: the problem this solved, what you built (e.g. a ROS2
-              mission/telemetry pipeline simulated in Gazebo), and the outcome —
-              flight time, autonomy level, or what shipped. ]
-            </p>
-            <div class="work__links">
-              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
-              <a href="#" target="_blank" rel="noopener">writeup <span aria-hidden="true">↗</span></a>
-            </div>
-          </li>
+        <div class="section__body">
+          <ol class="work" data-glow>
+            <li class="work__item card" data-reveal>
+              <div class="work__head">
+                <h3 class="work__title">Autonomous UAV mission control</h3>
+                <span class="work__tags">ROS2 · ArduPilot · MAVLink · Gazebo</span>
+              </div>
+              <p class="work__desc">
+                [ Replace: the problem this solved, what you built (e.g. a ROS2
+                mission/telemetry pipeline simulated in Gazebo), and the outcome —
+                flight time, autonomy level, or what shipped. ]
+              </p>
+              <div class="work__links">
+                <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+                <a href="#" target="_blank" rel="noopener">writeup <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
 
-          <li class="work__item">
-            <div class="work__head">
-              <h3 class="work__title">Containerized platform on Azure AKS</h3>
-              <span class="work__tags">Azure · Kubernetes · Docker · GitHub Actions</span>
-            </div>
-            <p class="work__desc">
-              [ Replace: a cloud/DevOps project — services you containerized and
-              deployed to AKS, the CI/CD pipeline, and the result (deploy time,
-              uptime, scale, cost). ]
-            </p>
-            <div class="work__links">
-              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
-              <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
-            </div>
-          </li>
+            <li class="work__item card" data-reveal>
+              <div class="work__head">
+                <h3 class="work__title">Containerized platform on Azure AKS</h3>
+                <span class="work__tags">Azure · Kubernetes · Docker · GitHub Actions</span>
+              </div>
+              <p class="work__desc">
+                [ Replace: a cloud/DevOps project — services you containerized and
+                deployed to AKS, the CI/CD pipeline, and the result (deploy time,
+                uptime, scale, cost). ]
+              </p>
+              <div class="work__links">
+                <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+                <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
 
-          <li class="work__item">
-            <div class="work__head">
-              <h3 class="work__title">[ Web product — replace with a real one ]</h3>
-              <span class="work__tags">TypeScript · React · Node · Postgres</span>
-            </div>
-            <p class="work__desc">
-              [ Replace: a full-stack web app you shipped — the problem, the
-              architecture, and impact (users, performance, what it replaced). ]
-            </p>
-            <div class="work__links">
-              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
-              <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
-            </div>
-          </li>
+            <li class="work__item card" data-reveal>
+              <div class="work__head">
+                <h3 class="work__title">[ Web product — replace with a real one ]</h3>
+                <span class="work__tags">TypeScript · React · Node · Postgres</span>
+              </div>
+              <p class="work__desc">
+                [ Replace: a full-stack web app you shipped — the problem, the
+                architecture, and impact (users, performance, what it replaced). ]
+              </p>
+              <div class="work__links">
+                <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+                <a href="#" target="_blank" rel="noopener">live <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
 
-          <li class="work__item">
-            <div class="work__head">
-              <h3 class="work__title">ESP32 sensor telemetry node</h3>
-              <span class="work__tags">ESP32 · Arduino · C++ · sensors</span>
-            </div>
-            <p class="work__desc">
-              [ Replace: an embedded build — the hardware, what it sensed/
-              controlled, how it talked to the rest of the system, and the
-              result. ]
-            </p>
-            <div class="work__links">
-              <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
-            </div>
-          </li>
-        </ol>
+            <li class="work__item card" data-reveal>
+              <div class="work__head">
+                <h3 class="work__title">ESP32 sensor telemetry node</h3>
+                <span class="work__tags">ESP32 · Arduino · C++ · sensors</span>
+              </div>
+              <p class="work__desc">
+                [ Replace: an embedded build — the hardware, what it sensed/
+                controlled, how it talked to the rest of the system, and the
+                result. ]
+              </p>
+              <div class="work__links">
+                <a href="#" target="_blank" rel="noopener">code <span aria-hidden="true">↗</span></a>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
     -->
 
-    <!-- CONTACT -->
-    <section id="contact" class="section section--contact" aria-labelledby="contact-title">
+    <!-- EDUCATION -->
+    <section id="education" class="section" aria-labelledby="education-title">
       <div class="container section__inner">
         <header class="section__head">
-          <span class="section__index">03</span>
-          <h2 id="contact-title" class="section__title">contact</h2>
-          <span class="section__rule" aria-hidden="true"></span>
+          <span class="section__index">04</span>
+          <h2 id="education-title" class="section__title">education</h2>
         </header>
 
-        <div class="contact">
-          <p class="contact__lede">
-            The fastest way to reach me is email. I usually reply within a day.
-          </p>
+        <div class="section__body">
+          <ol class="timeline" role="list">
+            <li class="job" data-reveal>
+              <div class="job__when">
+                <span class="job__dates"><time datetime="2018-01">Jan 2018</time> &mdash; <time datetime="2021-12">Dec 2021</time></span>
+              </div>
+              <div class="job__main">
+                <h3 class="job__role">Bachelor of Information Technology <span class="job__role-note">BIT</span></h3>
+                <p class="job__org">
+                  <span class="job__company">University of Colombo School of Computing</span>
+                  <span>UCSC</span>
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
 
-          <a class="contact__email" href="mailto:lhrsupun@gmail.com">
-            <span class="contact__email-label">email</span>
-            <span class="contact__email-value">lhrsupun@gmail.com</span>
-            <span class="contact__email-arrow" aria-hidden="true">→</span>
-          </a>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container section__inner">
+        <header class="section__head">
+          <span class="section__index">05</span>
+          <h2 id="contact-title" class="section__title">contact</h2>
+        </header>
 
-          <ul class="links" aria-label="Other links">
-            <li>
-              <a href="https://github.com/LhrSupun" target="_blank" rel="noopener">
-                <span class="links__key">github</span>
-                <span class="links__val">@LhrSupun</span>
-                <span class="links__arrow" aria-hidden="true">↗</span>
+        <div class="section__body" data-glow>
+          <div class="contact card" data-reveal>
+            <p class="contact__lede">
+              The fastest way to reach me is email. I usually reply within a day.
+            </p>
+
+            <div class="contact__email-row">
+              <a class="contact__email" href="mailto:lhrsupun@gmail.com">
+                <span class="contact__email-value">lhrsupun@gmail.com</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
               </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/lhrsupun/" target="_blank" rel="noopener">
-                <span class="links__key">linkedin</span>
-                <span class="links__val">in/lhrsupun</span>
-                <span class="links__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/Lhr_Supun" target="_blank" rel="noopener">
-                <span class="links__key">twitter</span>
-                <span class="links__val">@Lhr_Supun</span>
-                <span class="links__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <!-- Add a resume: drop resume.pdf in the repo root and uncomment.
-            <li>
-              <a href="/resume.pdf" target="_blank" rel="noopener">
-                <span class="links__key">resume</span>
-                <span class="links__val">resume.pdf</span>
-                <span class="links__arrow" aria-hidden="true">↓</span>
-              </a>
-            </li>
-            -->
-          </ul>
+              <button class="copy-btn" type="button" data-copy="lhrsupun@gmail.com" aria-label="Copy email address">
+                <svg class="icon icon--copy" aria-hidden="true"><use href="#i-copy" /></svg>
+                <svg class="icon icon--check" aria-hidden="true"><use href="#i-check" /></svg>
+                <span data-copy-label aria-live="polite">copy</span>
+              </button>
+            </div>
+
+            <ul class="links" aria-label="Other links">
+              <li>
+                <a href="https://github.com/LhrSupun" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                  <span class="links__text">
+                    <span class="links__key">github</span>
+                    <span class="links__val">@LhrSupun</span>
+                  </span>
+                  <svg class="icon links__arrow" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/lhrsupun/" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                  <span class="links__text">
+                    <span class="links__key">linkedin</span>
+                    <span class="links__val">in/lhrsupun</span>
+                  </span>
+                  <svg class="icon links__arrow" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/Lhr_Supun" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-x" /></svg>
+                  <span class="links__text">
+                    <span class="links__key">x / twitter</span>
+                    <span class="links__val">@Lhr_Supun</span>
+                  </span>
+                  <svg class="icon links__arrow" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </a>
+              </li>
+              <!-- Add a resume: drop resume.pdf in the repo root and uncomment.
+              <li>
+                <a href="/resume.pdf" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-arrow-down-right" /></svg>
+                  <span class="links__text">
+                    <span class="links__key">resume</span>
+                    <span class="links__val">resume.pdf</span>
+                  </span>
+                  <svg class="icon links__arrow" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+                </a>
+              </li>
+              -->
+            </ul>
+
+            <p class="contact__where">Bandaragama, Sri Lanka · GMT+5:30</p>
+          </div>
         </div>
       </div>
     </section>
@@ -351,66 +759,69 @@
   <footer class="footer" aria-label="Site footer">
     <div class="container footer__inner">
       <span class="footer__left">&copy; <span id="year">2026</span> Lahiru Supun</span>
-      <span class="footer__center" aria-hidden="true">·</span>
-      <span class="footer__right">built with html, css &amp; a little js</span>
+      <span class="footer__note">built with html, css &amp; a little js</span>
+      <a class="footer__top" href="#top">
+        <span>back to top</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+      </a>
     </div>
   </footer>
 
   <!-- Tweaks toggle button (visible on the live site) -->
-  <button id="tweaks-toggle" class="tweaks-toggle" aria-label="Open tweaks" aria-expanded="false">
+  <button id="tweaks-toggle" class="tweaks-toggle" type="button" aria-label="Open tweaks" aria-expanded="false" aria-controls="tweaks-panel">
     <span class="tweaks-toggle__icon" aria-hidden="true">
       <span></span><span></span><span></span>
     </span>
     <span class="tweaks-toggle__label">tweaks</span>
   </button>
 
-  <!-- Tweaks panel (vanilla JS, hidden until toggled by host) -->
+  <!-- Tweaks panel (vanilla JS, hidden until toggled) -->
   <div id="tweaks-panel" class="tweaks" hidden aria-label="Tweaks">
     <div class="tweaks__head">
       <span class="tweaks__title">Tweaks</span>
-      <button id="tweaks-close" class="tweaks__close" aria-label="Close tweaks">×</button>
+      <button id="tweaks-close" class="tweaks__close" type="button" aria-label="Close tweaks">×</button>
     </div>
 
     <div class="tweaks__section">
       <div class="tweaks__label">theme</div>
-      <div class="tweaks__row" role="radiogroup" aria-label="theme">
-        <button class="seg" data-tweak="theme" data-value="dark">dark</button>
-        <button class="seg" data-tweak="theme" data-value="light">light</button>
+      <div class="tweaks__row" role="group" aria-label="theme">
+        <button class="seg" type="button" data-tweak="theme" data-value="dark">dark</button>
+        <button class="seg" type="button" data-tweak="theme" data-value="light">light</button>
       </div>
     </div>
 
     <div class="tweaks__section">
       <div class="tweaks__label">accent</div>
-      <div class="tweaks__row tweaks__row--swatches" role="radiogroup" aria-label="accent">
-        <button class="swatch" data-tweak="accent" data-value="lime"    style="--sw:#c6ff3d" aria-label="lime"></button>
-        <button class="swatch" data-tweak="accent" data-value="cyan"    style="--sw:#5ee3ff" aria-label="cyan"></button>
-        <button class="swatch" data-tweak="accent" data-value="amber"   style="--sw:#ffb454" aria-label="amber"></button>
-        <button class="swatch" data-tweak="accent" data-value="magenta" style="--sw:#ff5eaa" aria-label="magenta"></button>
-        <button class="swatch" data-tweak="accent" data-value="violet"  style="--sw:#a78bff" aria-label="violet"></button>
+      <div class="tweaks__row tweaks__row--swatches" role="group" aria-label="accent">
+        <button class="swatch" type="button" data-tweak="accent" data-value="lime"    style="--sw:#c6ff3d" aria-label="lime"></button>
+        <button class="swatch" type="button" data-tweak="accent" data-value="cyan"    style="--sw:#5ee3ff" aria-label="cyan"></button>
+        <button class="swatch" type="button" data-tweak="accent" data-value="amber"   style="--sw:#ffb454" aria-label="amber"></button>
+        <button class="swatch" type="button" data-tweak="accent" data-value="magenta" style="--sw:#ff5eaa" aria-label="magenta"></button>
+        <button class="swatch" type="button" data-tweak="accent" data-value="violet"  style="--sw:#a78bff" aria-label="violet"></button>
       </div>
     </div>
 
     <div class="tweaks__section">
       <div class="tweaks__label">background</div>
-      <div class="tweaks__row tweaks__row--grid2" role="radiogroup" aria-label="background">
-        <button class="seg" data-tweak="bg" data-value="spotlight">spotlight</button>
-        <button class="seg" data-tweak="bg" data-value="scan">scan</button>
-        <button class="seg" data-tweak="bg" data-value="grid">grid</button>
-        <button class="seg" data-tweak="bg" data-value="off">off</button>
+      <div class="tweaks__row tweaks__row--grid2" role="group" aria-label="background">
+        <button class="seg" type="button" data-tweak="bg" data-value="spotlight">spotlight</button>
+        <button class="seg" type="button" data-tweak="bg" data-value="scan">scan</button>
+        <button class="seg" type="button" data-tweak="bg" data-value="grid">grid</button>
+        <button class="seg" type="button" data-tweak="bg" data-value="off">off</button>
       </div>
     </div>
 
     <div class="tweaks__section">
       <div class="tweaks__label">font</div>
-      <div class="tweaks__row tweaks__row--col" role="radiogroup" aria-label="font">
-        <button class="seg seg--wide" data-tweak="font" data-value="jetbrains" style="font-family:'JetBrains Mono',monospace">JetBrains Mono</button>
-        <button class="seg seg--wide" data-tweak="font" data-value="ibm"       style="font-family:'IBM Plex Mono',monospace">IBM Plex Mono</button>
-        <button class="seg seg--wide" data-tweak="font" data-value="geist"     style="font-family:'Geist Mono',monospace">Geist Mono</button>
-        <button class="seg seg--wide" data-tweak="font" data-value="space"     style="font-family:'Space Mono',monospace">Space Mono</button>
+      <div class="tweaks__row tweaks__row--col" role="group" aria-label="font">
+        <button class="seg seg--wide" type="button" data-tweak="font" data-value="geist"   style="font-family:'Geist',sans-serif">Geist</button>
+        <button class="seg seg--wide" type="button" data-tweak="font" data-value="grotesk" style="font-family:'Space Grotesk',sans-serif">Space Grotesk</button>
+        <button class="seg seg--wide" type="button" data-tweak="font" data-value="plex"    style="font-family:'IBM Plex Sans',sans-serif">IBM Plex</button>
+        <button class="seg seg--wide" type="button" data-tweak="font" data-value="mono"    style="font-family:'JetBrains Mono',monospace">JetBrains Mono</button>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
